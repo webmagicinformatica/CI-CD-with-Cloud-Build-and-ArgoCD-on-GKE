@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: springapp
-        image: pranavdhopey/springapp:v2
+        image: pranavdhopey/springapp:v1
         ports:
         - containerPort: 8080
