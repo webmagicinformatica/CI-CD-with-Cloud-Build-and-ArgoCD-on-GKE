@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: springapp
-        image: asia.gcr.io/GOOGLE_CLOUD_PROJECT/pranav-repo/springapp:COMMIT_SHA
+        image: asia.gcr.io/searce-playground/pranav-repo/springapp:b13ec3b
         ports:
         - containerPort: 8080
 
