@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: springapp
-        image: asia.gcr.io/searce-playground/pranav-repo/springapp:978adc0
+        image: asia.gcr.io/searce-playground/pranav-repo/springapp:f83f207
         ports:
         - containerPort: 8080
 
