@@ -1,11 +1,16 @@
-#### Buiding Docker Image ####
+#### Building Docker Image ####
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/myapp:$SHORT_SHA', '.' ]
+  args: [ 'build', '-t', 'asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/myapp:$SHORT_SHA', '-t', 'asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/myapp:${_IMAGE_TAG}', '.' ]
 
 #### Pushing Docker Image ####
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/myapp:$SHORT_SHA' ]
+  entrypoint: /bin/sh
+  args: 
+  - -c
+  - |
+    docker push asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/myapp:$SHORT_SHA
+    docker push asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/myapp:${_IMAGE_TAG}
 
 # This step generates the new manifest
 - name: 'gcr.io/cloud-builders/gcloud'
