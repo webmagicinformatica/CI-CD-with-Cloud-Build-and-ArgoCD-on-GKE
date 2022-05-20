@@ -8,7 +8,7 @@ public class HelloWorldController {
 
 	@GetMapping("/")
 	public String sayHello() {
-		return "Hello from Code Build!! Master Branch!!";
+		return "Hello from Cloud Run!! Extended Cloud Build";
 	}
 	
 }
