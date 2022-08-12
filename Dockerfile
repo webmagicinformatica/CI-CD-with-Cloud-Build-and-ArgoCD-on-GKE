@@ -1,6 +1,6 @@
 ## Stage 1
 FROM maven:3.8.4-openjdk-11-slim AS builder
-MAINTAINER pranav.dhope@gmail.com
+MAINTAINER info@webmagicinformatica.com
 WORKDIR /app
 COPY . .
 RUN mvn install
